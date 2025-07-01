@@ -13,8 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-      ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+      IMAGE_NAME: spring-pet-clinic-gradle
+      IMAGE_VERSION: 1.0.1
+      ARTIFACTORY_HOST: ${{ secrets.ARTIFACTORY_HOST }}
+      ARTIFACTORY_CONTAINER_REPO: ${{ secrets.ARTIFACTORY_CONTAINER_REPO }}
     strategy:
       matrix:
         java: [ '17' ]
@@ -35,3 +37,17 @@ jobs:
         
       - name: Build with Gradle
         run: ./gradlew build
+        
+      - name: Log in to JFrog Container Registry
+        run: |
+          echo "${ARTIFACTORY_PASSWORD}" | docker login ${ARTIFACTORY_HOST} \
+            --username "${ARTIFACTORY_USER}" --password-stdin
+
+      - name: Build image with Gradle
+        run: |
+          ./gradlew bootBuildImage \
+            --imageName=${ARTIFACTORY_HOST}/${ARTIFACTORY_CONTAINER_REPO}/${IMAGE_NAME}:${IMAGE_VERSION}
+
+      - name: Push image to JFrog
+        run: |
+          docker push ${ARTIFACTORY_HOST}/${ARTIFACTORY_CONTAINER_REPO}/${IMAGE_NAME}:${IMAGE_VERSION}
