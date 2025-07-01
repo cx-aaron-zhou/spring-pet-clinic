@@ -293,17 +293,17 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
+      <id>aaron-spring-snapshot</id>
+      <name>Spring Snapshot</name>
+      <url>https://aaronzhou.jfrog.io/artifactory/aaron-spring-snapshot</url>
     </repository>
     <repository>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
+      <id>aaron-spring-milestone</id>
+      <name>Spring Milestone</name>
+      <url>https://aaronzhou.jfrog.io/artifactory/aaron-spring-milestone</url>
     </repository>
   </repositories>
   <pluginRepositories>
@@ -311,17 +311,17 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
+      <id>aaron-spring-snapshot</id>
+      <name>Spring Snapshot</name>
+      <url>https://aaronzhou.jfrog.io/artifactory/aaron-spring-snapshot</url>
     </pluginRepository>
     <pluginRepository>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
+      <id>aaron-spring-milestone</id>
+      <name>Spring Milestone</name>
+      <url>https://aaronzhou.jfrog.io/artifactory/aaron-spring-milestone</url>
     </pluginRepository>
   </pluginRepositories>
 
