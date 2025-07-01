@@ -5,15 +5,15 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.0</version>
+    <version>3.5.3</version>
     <relativePath></relativePath>
   </parent>
 
   <groupId>org.springframework.samples</groupId>
-  <artifactId>spring-petclinic</artifactId>
-  <version>3.5.0-SNAPSHOT</version>
+  <artifactId>spring-pet-clinic</artifactId>
+  <version>1.0.0</version>
 
-  <name>petclinic</name>
+  <name>pet-clinic</name>
 
   <properties>
 
